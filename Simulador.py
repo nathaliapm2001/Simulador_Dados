@@ -1,7 +1,9 @@
-# importacion de la libreria para usar el aleatorio
+# importacion de las librerias
 import random
+from rich.panel import Panel
+from rich.console import Console 
 
-# Constantes de los tipos de dados
+# Consta)ntes de los tipos de dados
 D4 = 4
 D6 = 6
 D8 = 8
@@ -11,6 +13,9 @@ D20 = 20
 
 # variable de resultados, acumula los resultados de los dados
 acumulador = 0
+
+# variable de la cconsola de rich
+console = Console()
 
 # Inicio y breve funcionalidad del programa para el usuario
 print("BIENVENIDO AL SIMULADOR DE DADOS")
@@ -47,32 +52,56 @@ while True:
                 case "1":
                     print("Seleccionaste el D4")
                     caras = D4
-                    cantidad=int(input("cunatos dados lanzaras?"))          
+                    cantidad=int(input("cunatos dados lanzaras?"))
+                    for i in range(cantidad):
+                        resultado = random.randint(1,caras)
+                        console.print(Panel(str(resultado)))
+                        acumulador = acumulador + resultado                              
 
                 case "2":
                     print("Seleccionaste el D6")
                     caras = D6
                     cantidad=int(input("cunatos dados lanzaras?"))
+                    for i in range(cantidad):
+                        resultado = random.randint(1,caras)
+                        console.print(Panel(str(resultado)))
+                        acumulador = acumulador + resultado
 
                 case "3":
                     print("Seleccionaste el D8")
                     caras = D8
                     cantidad=int(input("cunatos dados lanzaras?"))
+                    for i in range(cantidad):
+                        resultado = random.randint(1,caras)
+                        console.print(Panel(str(resultado)))
+                        acumulador = acumulador + resultado
 
                 case "4":
                     print("Seleccionaste el D10")
                     caras = D10
                     cantidad=int(input("cunatos dados lanzaras?"))
+                    for i in range(cantidad):
+                        resultado = random.randint(1,caras)
+                        console.print(Panel(str(resultado)))
+                        acumulador = acumulador + resultado
 
                 case "5":
                     print("Seleccionaste el D12")
                     caras = D12
                     cantidad=int(input("cunatos dados lanzaras?"))      
+                    for i in range(cantidad):
+                        resultado = random.randint(1,caras)
+                        console.print(Panel(str(resultado)))
+                        acumulador = acumulador + resultado
 
                 case "6":
                     print("Seleccionaste el D20")
                     caras = D20
                     cantidad=int(input("cunatos dados lanzaras?"))
+                    for i in range(cantidad):
+                        resultado = random.randint(1,caras)
+                        console.print(Panel(str(resultado)))
+                        acumulador = acumulador + resultado
 
 # Logica de los resultados de los dados y su media                    
         case "2":
@@ -80,6 +109,7 @@ while True:
 
 # Ampliacion de futuro del programa sobre analitica 
         case "3": 
+            print("No esta disponible, proximamente analitica")
             pass
 
         case "4":
