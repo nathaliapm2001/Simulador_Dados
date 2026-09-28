@@ -1,7 +1,8 @@
 # importacion de las librerias
 import random
 from rich.panel import Panel
-from rich.console import Console 
+from rich.console import Console
+from rich import print 
 
 # Constantes de los tipos de dados
 D4 = 4
@@ -77,10 +78,20 @@ while True:
                     print("Dado inexistente")
                     continue
 
+#Logica de tirada de dado aleatorio segun cara elegida
             cantidad=int(input("cunatos dados lanzaras?"))
+
+# Coloree de los dados   
             for i in range(cantidad):
                 resultado = random.randint(1,caras)
-                console.print(Panel(str(resultado)))
+                if resultado == 1 : 
+                    console.print(f"[red]Resultado: {resultado}[/red]")
+                elif resultado == caras :
+                    console.print(f"[green]Resultado: {resultado}[/green]")
+                else:
+                    console.print(f"[yellow]Resultado: {resultado}[/yellow]")
+                    
+                
                 acumulador = acumulador + resultado        
 
 
