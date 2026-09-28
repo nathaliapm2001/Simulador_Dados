@@ -19,13 +19,13 @@ D20 = 20
 console = Console()
 
 # Inicio y breve funcionalidad del programa para el usuario
-print("---BIENVENIDO AL SIMULADOR DE DADOS---")
+console.print(f"[deep_pink3]---BIENVENIDO AL SIMULADOR DE DADOS---[/deep_pink3]")
 print("podras elegir entre los diferentes dados y mostraremos cuanto haz sacado\n")
 
 # Menu de opciones
 while True:
 
-    print("---MENU---")
+    print(f"[medium_purple1]---MENU---[/medium_purple1]")
     print("1. Lanzar dados")
     print("2. Analitica")
     print("3. Salir \n")
