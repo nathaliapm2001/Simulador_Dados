@@ -85,11 +85,11 @@ while True:
             for i in range(cantidad):
                 resultado = random.randint(1,caras)
                 if resultado == 1 : 
-                    console.print(f"[red]Resultado: {resultado}[/red]")
+                    console.print(Panel(f"[red] {resultado}[/red]"))
                 elif resultado == caras :
-                    console.print(f"[green]Resultado: {resultado}[/green]")
+                    console.print(Panel(f"[green] {resultado}[/green]"))
                 else:
-                    console.print(f"[yellow]Resultado: {resultado}[/yellow]")
+                    console.print(Panel(f"[yellow] {resultado}[/yellow]"))
                     
                 
                 acumulador = acumulador + resultado        
