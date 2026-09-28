@@ -12,15 +12,13 @@ D10 = 10
 D12 = 12
 D20 = 20
 
-# variable de resultados, acumula los resultados de los dados
-acumulador = 0
 
 # variable de la cconsola de rich
 console = Console()
 
 # Inicio y breve funcionalidad del programa para el usuario
-print("BIENVENIDO AL SIMULADOR DE DADOS")
-print("podras elegir entre los diferentes dados y mostraremos cuanto haz sacado")
+print("---BIENVENIDO AL SIMULADOR DE DADOS---")
+print("podras elegir entre los diferentes dados y mostraremos cuanto haz sacado\n")
 
 # Menu de opciones
 while True:
@@ -28,9 +26,9 @@ while True:
     print("---MENU---")
     print("1. Lanzar dados")
     print("2. Analitica")
-    print("3. Salir")
+    print("3. Salir \n")
 
-    opcion = input("elige una opcion: ")
+    opcion = input("elige una opcion:")
 
     match opcion:
 
@@ -44,7 +42,7 @@ while True:
             print("5. D12 ")
             print("6. D20")
 
-            opcionDado = input("Que dado quieres lanzar? ")
+            opcionDado = input("Que dado quieres lanzar? \n")
 
 # Logica de la seleccion de dados a traves de un submenu 
             match opcionDado:
@@ -77,12 +75,15 @@ while True:
                     print("Dado inexistente")
                     continue
 
-#Logica de tirada de dado aleatorio segun cara elegida
-            cantidad=int(input("cunatos dados lanzaras?"))
+# Logica de tirada de dado aleatorio segun cara elegida con total y su promedio
+            cantidad=int(input("cunatos dados lanzaras?\n"))
 
-# Coloree de los dados   
+            total = 0  
+
             for i in range(cantidad):
                 resultado = random.randint(1,caras)
+
+# Colorse de los dados 
                 if resultado == 1 : 
                     console.print(Panel(f"[red] {resultado}[/red]"))
                 elif resultado == caras :
@@ -90,9 +91,14 @@ while True:
                 else:
                     console.print(Panel(f"[yellow] {resultado}[/yellow]"))
                     
-                
-                acumulador = acumulador + resultado        
+                   
+                total = total + resultado
 
+            print("Total de la tira: ", total)
+
+            promedio = total / cantidad
+
+            print("Promedio de la tirada: ", promedio)
 
 # Ampliacion de futuro del programa sobre analitica 
         case "2": 
