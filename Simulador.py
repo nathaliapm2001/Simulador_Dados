@@ -1,8 +1,10 @@
 # importacion de las librerias
 import random
+import time
 from rich.panel import Panel
 from rich.console import Console
 from rich import print 
+from rich.live import Live
 
 # Constantes de los tipos de dados
 D4 = 4
@@ -81,17 +83,24 @@ while True:
             total = 0  
 
             for i in range(cantidad):
+
+# Animaccion del lanzamiento
+                with Live(console=console, refresh_per_second=20) as live:
+                    for j in range(15):
+                        numeroAleatorio = random.randint(1,caras)
+                        live.update(Panel(f"[yellow]{numeroAleatorio}[/yellow]"))
+                        time.sleep(0.08)
+
                 resultado = random.randint(1,caras)
 
-# Colorse de los dados 
+# Colores de los dados 
                 if resultado == 1 : 
                     console.print(Panel(f"[red] {resultado}[/red]"))
                 elif resultado == caras :
                     console.print(Panel(f"[green] {resultado}[/green]"))
                 else:
                     console.print(Panel(f"[yellow] {resultado}[/yellow]"))
-                    
-                   
+                          
                 total = total + resultado
 
             print("Total de la tira: ", total)
