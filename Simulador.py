@@ -3,7 +3,7 @@ import random
 from rich.panel import Panel
 from rich.console import Console 
 
-# Consta)ntes de los tipos de dados
+# Constantes de los tipos de dados
 D4 = 4
 D6 = 6
 D8 = 8
@@ -71,15 +71,18 @@ while True:
                 case "6":
                     print("Seleccionaste el D20")
                     caras = D20
-                    #cantidad=int(input("cunatos dados lanzaras?"))
-                    #for i in range(cantidad):
-                        #resultado = random.randint(1,caras)
-                        #console.print(Panel(str(resultado)))
-                        #acumulador = acumulador + resultado
+                 
 
                 case _:
                     print("Dado inexistente")
                     continue
+
+            cantidad=int(input("cunatos dados lanzaras?"))
+            for i in range(cantidad):
+                resultado = random.randint(1,caras)
+                console.print(Panel(str(resultado)))
+                acumulador = acumulador + resultado        
+
 
 # Logica de los resultados de los dados y su media                    
         case "2":
