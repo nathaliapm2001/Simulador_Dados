@@ -27,9 +27,8 @@ while True:
 
     print("---MENU---")
     print("1. Lanzar dados")
-    print("2. Ver resultados")
-    print("3. Analitica")
-    print("4. Salir")
+    print("2. Analitica")
+    print("3. Salir")
 
     opcion = input("elige una opcion: ")
 
@@ -95,16 +94,12 @@ while True:
                 acumulador = acumulador + resultado        
 
 
-# Logica de los resultados de los dados y su media                    
-        case "2":
-            print("Resultados de los dados")
-
 # Ampliacion de futuro del programa sobre analitica 
-        case "3": 
+        case "2": 
             print("No esta disponible, proximamente analitica")
             pass
 
-        case "4":
+        case "3":
             print("Fin del simulador")
             break
 
