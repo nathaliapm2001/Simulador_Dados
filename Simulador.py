@@ -84,7 +84,7 @@ while True:
                     print("Dado inexistente")
                     continue
 
-# Logica de tirada de dado aleatorio segun cara elegida con total y su promedio
+# Logica de tirada de dado aleatorio segun la cara elegida con total y su promedio
             while True:
                 try:
                     cantidad=int(input("cunatos dados lanzaras?\n"))
@@ -101,7 +101,7 @@ while True:
 
             for i in range(cantidad):
 
-# Animaccion del lanzamiento
+    # Animaccion del lanzamiento
                 with Live(console=console, refresh_per_second=20) as live:
                     for j in range(15):
                         numeroAleatorio = random.randint(1,caras)
@@ -110,7 +110,7 @@ while True:
 
                 resultado = random.randint(1,caras)
 
-# Colores de los dados 
+    # Colores de los dados 
                 if resultado == 1 : 
                     console.print(Panel(f"[red] {resultado}[/red]"))
                 elif resultado == caras :
@@ -126,7 +126,7 @@ while True:
 
             print("Promedio de la tirada: ", promedio)
 
-# Ampliacion de futuro del programa sobre analitica 
+# Ampliacion a futuro del programa sobre analitica 
         case 2: 
             print("No esta disponible, proximamente analitica")
             pass
