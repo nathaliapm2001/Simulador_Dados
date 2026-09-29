@@ -30,12 +30,16 @@ while True:
     print("2. Analitica")
     print("3. Salir \n")
 
-    opcion = input("elige una opcion:")
+    try:
+        opcion = int(input("elige una opcion:"))
+    except ValueError:
+        print("Debes introducir un numero")
+        continue
 
     match opcion:
 
 # Opcion donde escoges el tipo de dado y la cantidad de lanzadas del mismo
-        case "1":
+        case 1:
     
             print("1. D4 ")
             print("2. D6 ")
@@ -44,42 +48,48 @@ while True:
             print("5. D12 ")
             print("6. D20")
 
-            opcionDado = input("Que dado quieres lanzar? \n")
+            try:
+                opcionDado = int(input("Que dado quieres lanzar? \n"))
+            except ValueError:
+                print("Debes introducir un numero")
+                continue
 
 # Logica de la seleccion de dados a traves de un submenu 
             match opcionDado:
-                case "1":
+                case 1:
                     print("Seleccionaste el D4")
                     caras = D4                                             
 
-                case "2":
+                case 2:
                     print("Seleccionaste el D6")
                     caras = D6
 
-                case "3":
+                case 3:
                     print("Seleccionaste el D8")
                     caras = D8
 
-                case "4":
+                case 4:
                     print("Seleccionaste el D10")
                     caras = D10
 
-                case "5":
+                case 5:
                     print("Seleccionaste el D12")
                     caras = D12
 
-                case "6":
+                case 6:
                     print("Seleccionaste el D20")
                     caras = D20
-                 
 
                 case _:
                     print("Dado inexistente")
                     continue
 
 # Logica de tirada de dado aleatorio segun cara elegida con total y su promedio
-            cantidad=int(input("cunatos dados lanzaras?\n"))
-
+            try:
+                cantidad=int(input("cunatos dados lanzaras?\n"))
+            except ValueError:
+                print("introduce una cantidad en numeros")
+                
             total = 0  
 
             for i in range(cantidad):
@@ -110,11 +120,11 @@ while True:
             print("Promedio de la tirada: ", promedio)
 
 # Ampliacion de futuro del programa sobre analitica 
-        case "2": 
+        case 2: 
             print("No esta disponible, proximamente analitica")
             pass
 
-        case "3":
+        case 3:
             print("Fin del simulador")
             break
 
