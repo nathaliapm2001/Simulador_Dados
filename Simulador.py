@@ -51,7 +51,7 @@ while True:
             try:
                 opcionDado = int(input("Que dado quieres lanzar? \n"))
             except ValueError:
-                print("Debes introducir un numero")
+                print("Debes introducir una opcion de numero valida")
                 continue
 
 # Logica de la seleccion de dados a traves de un submenu 
@@ -85,11 +85,18 @@ while True:
                     continue
 
 # Logica de tirada de dado aleatorio segun cara elegida con total y su promedio
-            try:
-                cantidad=int(input("cunatos dados lanzaras?\n"))
-            except ValueError:
-                print("introduce una cantidad en numeros")
-                
+            while True:
+                try:
+                    cantidad=int(input("cunatos dados lanzaras?\n"))
+
+                    if cantidad > 0:
+                        break
+                    else:
+                        print("Debe ser un numero mayor a 0")
+
+                except ValueError:
+                    print("introduce una cantidad en numeros")
+
             total = 0  
 
             for i in range(cantidad):
