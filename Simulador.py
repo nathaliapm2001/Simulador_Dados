@@ -1,3 +1,14 @@
+"""
+Simulador de dados.
+
+Este programa permite al usuario seleccionar diferentes tipos de dados
+(D4, D6, D8, D10, D12 y D20) y elegir cuántos quiere lanzar.
+
+Cada dado realiza una animación de lanzamiento y muestra su resultado
+con un color diferente según el valor obtenido. Al finalizar, se calcula
+el total y el promedio de los resultados.
+"""
+
 # importacion de las librerias
 import random
 import time
@@ -102,21 +113,21 @@ while True:
             for i in range(cantidad):
 
     # Animaccion del lanzamiento
-                with Live(console=console, refresh_per_second=20) as live:
+                with Live(console=console, refresh_per_second=20, transient=True) as live:
                     for j in range(15):
                         numeroAleatorio = random.randint(1,caras)
-                        live.update(Panel(f"[yellow]{numeroAleatorio}[/yellow]"))
+                        live.update(Panel.fit(f"[yellow]{numeroAleatorio}[/yellow]"))
                         time.sleep(0.08)
 
                 resultado = random.randint(1,caras)
 
     # Colores de los dados 
                 if resultado == 1 : 
-                    console.print(Panel(f"[red] {resultado}[/red]"))
+                    console.print(Panel.fit(f"[red] {resultado}[/red]"))
                 elif resultado == caras :
-                    console.print(Panel(f"[green] {resultado}[/green]"))
+                    console.print(Panel.fit(f"[green] {resultado}[/green]"))
                 else:
-                    console.print(Panel(f"[yellow] {resultado}[/yellow]"))
+                    console.print(Panel.fit(f"[yellow] {resultado}[/yellow]"))
                           
                 total = total + resultado
 
