@@ -1,7 +1,7 @@
 # Simulador_Dados
 # 🎲 Simulador de Dados
 
-Este repositorio contiene el proyecto **Simulador de Dados**, desarrollado en Python para practicar los contenidos de programación y gestión de proyectos de la asignatura.
+Este repositorio contiene un proyecto de **Simulador de Dados**, desarrollado en Python para practicar los contenidos de programación y gestión de proyectos de la asignatura.
 
 El programa permite seleccionar diferentes tipos de dados, realizar lanzamientos con una animación visual y consultar los resultados obtenidos.
 
